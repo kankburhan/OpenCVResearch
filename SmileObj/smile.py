@@ -41,13 +41,10 @@ while (cap.isOpened()):
             flags=cv2.CASCADE_SCALE_IMAGE
             )
 
-        # Set region of interest for smiles
         for (x, y, w, h) in smile:
             print("Found"+ str(len(smile))+ "smiles!")
             cv2.rectangle(roi_color, (x, y), (x+w, y+h), (255, 0, 0), 1)
-            #print "!!!!!!!!!!!!!!!!!"
 
-    #cv2.cv.Flip(frame, None, 1)
     cv2.imshow('Smile Detector', frame)
     c = cv2.waitKey(7) % 0x100
     if c == 27:
